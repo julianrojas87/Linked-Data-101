@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+            text-align: justify;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="left-column">
+            <article class="markdown-body">
+                <a href="http://idlab.technology" target="_blank"><img class="logo" id="idlab" src="./img/idlab.jpg" alt="IDLab"></a>
+                <h1>RDF 101 - A tutorial for Web developers</h1>
+                <p>
+                    The <a href="https://www.w3.org/TR/rdf11-concepts/" target="_blank">Resource Description Framework (RDF)</a> 
+                    is a standard model for representing information on the Web. 
+                    It is part of the <a href="https://www.w3.org/" target="_blank">W3C</a> standard recommendations 
+                    and it is considered within the 
+                    <a href="https://www.w3.org/DesignIssues/LinkedData.html" target="_blank">Linked Data principles</a>, 
+                    as the standard model for representing data on the Web.
+                    RDF defines an abstract model that can be represented through different serialization formats. 
+                    Some of them are based on well-known syntaxes that are familiar to Web developers such as 
+                    <a href="https://www.w3.org/TR/json-ld/" target="_blank">JSON-LD</a> or 
+                    <a href="https://www.w3.org/TR/rdf-syntax-grammar/" target="_blank">RDF/XML</a>.
+                    There are other formats with different syntaxes that are mostly used within the Semantic Web and Linked Data
+                    domain, such as <a href="https://www.w3.org/TR/turtle/" target="_blank">Turtle</a>,
+                    <a href="https://www.w3.org/TR/rdfa-core/" target="_blank">RDFa</a>, 
+                    <a href="https://www.w3.org/TR/n-triples/" target="_blank">N-Triples</a>, 
+                    <a href="https://www.w3.org/TR/trig/" target="_blank">Trig</a>,
+                    <a href="https://www.w3.org/TR/n-quads/" target="_blank">N-Quads</a>, among others.
+                </p>
+                <p>
+                    Regardless of the serialization format, RDF data remains consistent 
+                    and is semantically equivalent from one format to another.
+                    This means that in theory, a Linked Data-based Web application should be capable of reusing 
+                    and automatically understanding RDF data coming from different sources and in different formats.
+                    In practice, this requires data parsing processes for which several tools exist already.     
+                </p>
+                <p>
+                    In this tutorial we will introduce you to some of the existing alternatives and tools that facilitate 
+                    working with Linked Data and RDF in Web applications. For this, we will describe common use cases 
+                    so that, depending on your goal(s) and your time, you can sequentially follow this tutorial or 
+                    dive directly into any of the following use cases:
+                </p>
+                <ul>
+                    <li><a href="#working-with-json-ld">Working with JSON-LD</a></li>
+                    <li><a href="#reading-data-from-ontologies">Reading data from ontologies</a></li>
+                    <li><a href="#querying-linked-data-from-the-browser">Querying Linked Data from the browser</a></li>
+                </ul>
+                <h2 id="before-we-start">Before we start</h2>
+                <h3 id="what-will-i-learn">What will I learn</h3>
+                <h3 id="prerequisites">Prerequisites</h3>
+                <h3 id="how-to-use-the-tutorial">How to use the tutorial</h3>
+                <h2 id="related-concepts">Related concepts</h2>
+                <h3 id="rdf">RDF</h3>
+                <h3 id="ontologies">Ontologies</h3>
+                <h3 id="sparql">SPARQL</h3>
+                <h3 id="rdfjs">RDFJS</h3>
+                <h3 id="jsonld">JSON-LD</h3>
+                <h2 id="linked-data-web-tools">Linked Data Web tools</h2>
+                <h3 id="ldfetch">LDFetch</h3>
+                <h3 id="comunica">Comunica</h3>
+                <h3 id="graphql-ld">GraphQL-LD</h3>
+                <h3 id="ldflex">LDFlex</h3>
+                <h2 id="working-with-json-ld">Working with JSON-LD</h2>
+                <h3 id="reading-single-values">Reading single values</h3>
+                <h3 id="handling-nested-objects">Handling nested objects</h3>
+                <h3 id="json-ld-framing">JSON-LD framing</h3>
+                <h2 id="reading-data-from-ontologies">Reading data from ontologies</h2>
+                <h3 id="filling-dropdown-list">Filling a dropdown list</h3>
+                <h3 id="showing-human-readable-data">Showing human-readable data</h3>
+                <h2 id="querying-linked-data-from-the-browser">Querying Linked Data from the browser</h2>
+                <h3 id="sparql-with-comunica">SPARQL with Comunica</h3>
+                <h3 id="graphql-and-linked-data">GraphQL and Linked Data</h3>
+                <h3 id="traverse-data-graphs-with-ldflex">Traverse data graphs with LDFlex</h3>
+            </article>
+        </div>
+        <div id="right-column">
+            <article class="markdown-body">
+                <div id="table-of-contents">
+                    <h1>Table of contents</h1>
+                </div>
+                <p>
+                    <ul>
+                        <li><a href="#before-we-start" class="toc-link">Before we start</a></li>
+                        <ul>
+                            <li><a href="#what-will-i-learn" class="toc-link">What will I learn</a></li>
+                            <li><a href="#prerequisites" class="toc-link">Prerequisites</a></li>
+                            <li><a href="#how-to-use-the-tutorial" class="toc-link">How to use the tutorial</a></li>
+                        </ul>
+                        <li><a href="#related-concepts" class="toc-link">Related concepts</a></li>
+                        <ul>
+                            <li><a href="#rdf" class="toc-link">RDF</a></li>
+                            <li><a href="#ontologies" class="toc-link">Ontologies</a></li>
+                            <li><a href="#sparql" class="toc-link">SPARQL</a></li>
+                            <li><a href="#rdfjs" class="toc-link">RDFJS</a></li>
+                            <li><a href="#jsonld" class="toc-link">JSON-LD</a></li>
+                        </ul>
+                        <li><a href="#linked-data-we-tools" class="toc-link">Linked Data Web tools</a></li>
+                        <ul>
+                            <li><a href="#ldfetch" class="toc-link">LDFetch</a></li>
+                            <li><a href="#comunica" class="toc-link">Comunica</a></li>
+                            <li><a href="#graphql-ld" class="toc-link">GraphQL-LD</a></li>
+                            <li><a href="#ldflex" class="toc-link">LDFlex</a></li>
+                        </ul>
+                        <li><a href="#working-with-json-ld" class="toc-link">Working with JSON-LD</a></li>
+                        <ul>
+                            <li><a href="#reading-single-values" class="toc-link">Reading single values</a></li>
+                            <li><a href="#handling-nested-objects" class="toc-link">Handling nested objects</a></li>
+                            <li><a href="#json-ld-framing" class="toc-link">JSON-LD framing</a></li>
+                        </ul>
+                        <li><a href="#reading-data-from-ontologies" class="toc-link">Reading data from ontologies</a></li>
+                        <ul>
+                            <li><a href="#filling-dropdown-list" class="toc-link">Filling a dropdown list</a></li>
+                            <li><a href="#showing-human-readable-data" class="toc-link">Showing human readable data</a></li>
+                        </ul>
+                        <li><a href="#querying-linked-data-from-the-browser" class="toc-link">Querying Linked Data from the browser</a></li>
+                        <ul>
+                            <li><a href="#sparql-with-comunica" class="toc-link">SPARQL with Comunica</a></li>
+                            <li><a href="#graphql-and-linked-data" class="toc-link">GraphQL and Linked Data</a></li>
+                            <li><a href="#traverse-data-graphs-with-ldflex" class="toc-link">Traverse data graphs with LDFlex</a></li>
+                        </ul>
+                    </ul>
+                </p>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>
