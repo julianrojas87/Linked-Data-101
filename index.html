@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/github-markdown.css">
+    <link rel="stylesheet" href="./css/highlight-default.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -72,16 +73,32 @@
                     If you are new to concepts and technologies of Linked Data,
                     we advise you to follow this tutorial step by step.
                     Each section will introduce you to new concepts, tools 
-                    and interactive code examples using CodePen.
+                    and interactive code examples using <a href="https://codepen.io/" target="_blank">CodePen</a>.
                 </p>
                 <p>
                     On the other hand, if you already have experience working with Linked Data,
                     check our <a href="#usage-examples">Usage examples</a> section to see 
-                    different and interactive alternatives for using Linked Dat in your Web application. 
+                    different and interactive alternatives for using Linked Dat in Web applications. 
                 </p>
                 <h2 id="basic-concepts">Basic concepts</h2>
                 <h3 id="what-is-linked-data">What is Linked Data</h3>
+                <p>
+                    The Web started as a collection of documents or <i>websites</i>,
+                    that could be accessed and uniquely identified by an URL, e.g. 
+                    <a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">http://info.cern.ch/hypertext/WWW/TheProject.html</a> 
+                    — the first website ever. The information contained in these websites is normally presented 
+                    in a human-friendly format and often links to other websites containing more related information. 
+                    However machines struggle trying to understand the data contained in these websites as humans do.
+                    For this reason a set of principles were defined for structuring and publishing data on the Web.
+                    These are known as the <a href="https://www.w3.org/DesignIssues/LinkedData.html">Linked Data principles</a>
+                    and they aim on giving access to machines to all the data available on the Web.
+
+
+                </p>
                 <h3 id="what-is-an-ontology">What is an ontology</h3>
+                <p>
+                    TODO
+                </p>
                 
                 <h2 id="how-does-linked-data-look-like">How does Linked Data look like</h2>
                 <h3 id="rdf">RDF</h3>
@@ -92,48 +109,104 @@
                     and it is considered within the 
                     <a href="https://www.w3.org/DesignIssues/LinkedData.html" target="_blank">Linked Data principles</a>, 
                     as the standard model for representing data on the Web.
-                    RDF defines an abstract model that can be represented through different serialization formats. 
+                    RDF defines an abstract model that can be materialized through different serialization formats. 
                     Some of them are based on well-known syntaxes that are familiar to Web developers such as 
                     <a href="https://www.w3.org/TR/json-ld/" target="_blank">JSON-LD</a> or 
                     <a href="https://www.w3.org/TR/rdf-syntax-grammar/" target="_blank">RDF/XML</a>.
-                    There are other formats with different syntaxes that are mostly used within the Semantic Web and Linked Data
-                    domain, such as <a href="https://www.w3.org/TR/turtle/" target="_blank">Turtle</a>,
-                    <a href="https://www.w3.org/TR/rdfa-core/" target="_blank">RDFa</a>, 
-                    <a href="https://www.w3.org/TR/n-triples/" target="_blank">N-Triples</a>, 
-                    <a href="https://www.w3.org/TR/trig/" target="_blank">Trig</a>,
-                    <a href="https://www.w3.org/TR/n-quads/" target="_blank">N-Quads</a>, among others.
-                </p>
-                <p>
                     Regardless of the serialization format, RDF data remains consistent 
                     and is semantically equivalent from one format to another.
                     This means that in theory, a Linked Data-based Web application should be capable of reusing 
                     and automatically understanding RDF data coming from different sources and in different formats.
-                    In practice, this requires data parsing processes for which several tools exist already.     
+                    In practice, this requires data parsing processes for which several tools exist already.
                 </p>
+                <p>
+                    The model defined by RDF allows to make statements about resources 
+                    (e.g. documents, people, physical objects, abstract concepts, etc) in the form of <i>triples</i>.
+                    A <i>triple</i> expresses a relationship between two resources and it is composed by a <strong>subject</strong>,
+                    a <strong>predicate</strong> and an <strong>object</strong> (see figure 1). 
+                </p>
+                <img class="figure" id="fig1" src="./img/fig1.png" alt="Figure 1">
+                <p class="figure"><strong>Fig 1.</strong> An RDF triple.</p>
+                <p>
+                    Some examples of RDF triples are the following:
+                </p>
+                <div class="language-turtle highlighter-rouge">
+                    <div class="highlight">
+                        <pre class="highlight">
+                            <code>
+&#60;<span class="nn">Bob</span>&#62; &#60;<span class="n">is a</span>&#62; &#60;<span class="k">person</span>&#62;
+&#60;<span class="nn">Bob</span>&#62; &#60;<span class="n">is a friend of</span>&#62; &#60;<span class="k">Alice</span>&#62;
+&#60;<span class="nn">Bob</span>&#62; &#60;<span class="n">is born on</span>&#62; &#60;<span class="k">the 27th of June 1987</span>&#62;
+&#60;<span class="nn">Bob</span>&#62; &#60;<span class="n">is interested in</span>&#62; &#60;<span class="k">the Mona Lisa</span>&#62;
+&#60;<span class="nn">the Mona Lisa</span>&#62; &#60;<span class="n">was created by</span>&#62; &#60;<span class="k">Leonardo da Vinci</span>&#62;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
                 <h3 id="jsonld">JSON-LD</h3>
+                <p>
+                    TODO
+                </p>
                 <h3 id="other-serializations">Other serializations</h3>
-
+                <p>
+                    TODO
+                </p>
                 <h2 id="how-can-i-read-linked-data">How can I read Linked Data</h2>
                 <h3 id="rdfjs">RDFJS</h3>
+                <p>
+                    TODO
+                </p>
                 <h3 id="ldfetch">LDFetch</h3>
-
+                <p>
+                    TODO
+                </p>
                 <h2 id="how-does-linked-data-look-like">How can I query Linked data</h2>
+                <p>
+                    TODO
+                </p>
                 <h3 id="sparql">SPARQL</h3>
+                <p>
+                    TODO
+                </p>
                 <h3 id="comunica">Comunica</h3>
+                <p>
+                    TODO
+                </p>
                 <h3 id="graphql-ld">GraphQL-LD</h3>
+                <p>
+                    TODO
+                </p>
                 <h3 id="ldflex">LDFlex</h3>
-                
+                <p>
+                    TODO
+                </p>
                 <h2 id="usage-examples">Usage examples</h2>
-
                 <h3 id="working-with-json-ld-data">Working with JSON-LD data</h3>
                 <h4 id="reading-single-values">Reading single values</h4>
+                <p>
+                    TODO
+                </p>
                 <h4 id="handling-nested-objects">Handling nested objects</h4>
+                <p>
+                    TODO
+                </p>
                 <h4 id="json-ld-framing">JSON-LD framing</h4>
-
+                <p>
+                    TODO
+                </p>
                 <h3 id="using-ontologies-in-your-ui">Using ontologies in your UI</h3>
                 <h4 id="listing-entities-by-type">Listing entities by type</h4>
+                <p>
+                    TODO
+                </p>
                 <h4 id="getting-entities-description">Getting entities description</h4>
+                <p>
+                    TODO
+                </p>
                 <h4 id="translating-labels">Translating labels</h4>
+                <p>
+                    TODO
+                </p>
             </article>
         </div>
         <div id="right-column">
@@ -192,6 +265,16 @@
             </article>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+    <script>
+      window.onload = function(e){
+        (function () {
+          'use strict';
+          anchors.options.placement = 'left';
+          anchors.add('.markdown-body > h2, .markdown-body > h3, .markdown-body > h4, .markdown-body > h5, .markdown-body > h6');
+        })();
+      };
+    </script>
 </body>
 
 </html>

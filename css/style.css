@@ -87,3 +87,9 @@ h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.n
 .logo {
     width: 20%;
 }
+
+.figure {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
